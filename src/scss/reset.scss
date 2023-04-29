@@ -1,0 +1,9 @@
+@import './variables.scss';
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: var(--main-text-color);
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
