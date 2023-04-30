@@ -1,1 +1,35 @@
-<p>home works!</p>
+<div class="home">
+  <div class="main">
+    <div class="div-image">
+      <img height="500" width="400" src="../../../assets/images/people-listening-music.png" alt="people listening music">
+    </div>
+    <div class="main-content">
+      <h2>L5 Music</h2>
+      <p>Search for the best artists and albums.</p>
+      <div class="main-buttons">
+        <button type="button" class="btn btn-outline-light">Artists</button>
+        <button type="button" class="btn btn-outline-light">Albums</button>
+      </div>
+    </div>
+  </div>
+  <div class="top-trending">
+    <div class="trending-button">
+      <h2>Trend now</h2>
+      <button type="button" class="btn btn-outline-secondary">Search for more</button>
+    </div>
+    <div class="artist-trending">
+        <div class="artist-div col" *ngFor="let item of tracks">
+          <div class="card-artist">
+            <div class="card-header">
+              <img [src]="getImage(item)">
+            </div>
+            <div class="card-body">
+              <h6 class="card-title">{{item.name}}</h6>
+              <p class="card-text">{{item.artist.name}}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+

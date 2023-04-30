@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 
 //Modules
 import { PagesModule } from './pages/pages.module';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 /*
 O Pages Module carrega as páginas principais da aplicação automaticamente,
 bem como importa os componentes compartilhados, através do módulo shared
@@ -18,6 +20,7 @@ bem como importa os componentes compartilhados, através do módulo shared
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
     HttpClientModule,
     PagesModule
