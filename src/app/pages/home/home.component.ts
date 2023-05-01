@@ -3,9 +3,10 @@ import { forkJoin } from 'rxjs';
 
 //Services
 import { LastfmApiService } from 'src/app/services/lastfm-api.service';
-import { ArtistDto } from 'src/entities/dtos/artist.dto';
-import { TrackDto } from 'src/entities/dtos/track.dto';
-import { TopTrending } from 'src/entities/top-trending';
+
+//Models
+import { Track } from 'src/entities/track';
+import { Artist } from 'src/entities/artist';
 
 //Useful
 import { SweetAlert } from 'src/util/sweetalert';
@@ -17,9 +18,8 @@ import { SweetAlert } from 'src/util/sweetalert';
 })
 export class HomeComponent implements OnInit {
 
-  artists: ArtistDto[];
-  tracks: TrackDto[];
-  topTrending: TopTrending[];
+  artists: Artist[];
+  tracks: Array<Track>;
 
   deafultImage: string;
 
@@ -29,31 +29,43 @@ export class HomeComponent implements OnInit {
   ) {
     this.artists = [];
     this.tracks = [];
-    this.topTrending = [];
     this.deafultImage = 'https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png'
   }
 
   ngOnInit(): void {
-    this.getTopTrending()
+    this.getTracks()
   }
 
-  getTopTrending(){
-    let artists = this.lastfmApiService.getTopArtists();
-    let tracks = this.lastfmApiService.getTopTracks();
+  // getTopTrending(){
+  //   let artists = this.lastfmApiService.getTopArtists();
+  //   let tracks = this.lastfmApiService.getTopTracks();
 
-    forkJoin<any[]>([artists, tracks]).subscribe({
+  //   forkJoin<any[]>([artists, tracks]).subscribe({
+  //     next: (dados) => {
+  //       this.artists = dados[0].artists.artist;
+  //       // this.tracks = dados[1].tracks.track;
+  //     },
+  //     error: (error) => {
+  //       this.sweetAlert.spinnerHide();
+  //       this.sweetAlert.setError(error);
+  //     },
+  //     complete: () => {
+  //       this.sweetAlert.completed('Top Trending carregada');
+  //     }
+  //     })
+  // }
+
+  getTracks(){
+    this.lastfmApiService.getTopTracks().subscribe({
       next: (dados) => {
-        this.topTrending = dados;
-        this.artists = dados[0].artists.artist;
-        this.tracks = dados[1].tracks.track;
-        console.log(this.tracks)
+        this.tracks = dados;
       },
       error: (error) => {
         this.sweetAlert.spinnerHide();
         this.sweetAlert.setError(error);
       },
       complete: () => {
-        this.sweetAlert.completed('Top Trending carregada');
+        this.sweetAlert.completed('Top tracks');
       }
       })
   }

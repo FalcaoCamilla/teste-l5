@@ -7,15 +7,15 @@
       <h2>L5 Music</h2>
       <p>Search for the best artists and albums.</p>
       <div class="main-buttons">
-        <button type="button" class="btn btn-outline-light">Artists</button>
-        <button type="button" class="btn btn-outline-light">Albums</button>
+        <button type="button" [routerLink]="['/details', 1]" class="btn btn-outline-light">Artists</button>
+        <button type="button" [routerLink]="['/details', 2]" class="btn btn-outline-light">Albums</button>
       </div>
     </div>
   </div>
   <div class="top-trending">
     <div class="trending-button">
       <h2>Trend now</h2>
-      <button type="button" class="btn btn-outline-secondary">Search for more</button>
+      <button type="button" [routerLink]="['/tracks']" class="btn btn-outline-secondary">Search for more</button>
     </div>
     <div class="artist-trending">
         <div class="artist-div col" *ngFor="let item of tracks">

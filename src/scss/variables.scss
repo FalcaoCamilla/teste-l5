@@ -1,18 +1,22 @@
 :root {
   --main-bg-color: #F5F5F5;
-  --secondary-bg-color: #f7f7f7;
+  --secondary-bg-color: #0b0012;
 
   /* COLORS DEFAULT */
   --color-violet: #634191;
   --color-purple: #50016a;
+  --color-desatured-purple: #6341916e;
   --color-ciano: #00d4ff;
   --color-desatured-pink: #9c266e;
+  --color-light-pink: #ff6fc7;
   --color-blue:#396370;
   --color-blue-gray: #79a5ae;
   --color-black: #000000;
   --color-gray: #353535;
   --color-light-gray: #e4e4e4;
   --color-white: #ffffff;
+
+  --color-gray-shadow: #5e5e5e;
 
   /* SPACING */
   --spacing-1: 8px;
@@ -26,8 +30,4 @@
 
   /* FONTS */
   --font-default: "Poppins";
-
-  /* FONT SIZE */
-  --title: 48px;
-  --title-card: 22px;
 }

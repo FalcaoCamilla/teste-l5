@@ -1,0 +1,112 @@
+*{
+  color: var(--color-white);
+}
+
+.main-content{
+  height: 61vh;
+  background: var(--secondary-bg-color)
+}
+
+.main-content > h3{
+  z-index: 1;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  padding-top: var(--spacing-2);
+}
+
+strong{
+  color: var(--color-ciano) !important;
+}
+
+.primary-section{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.card-section{
+  height: 60%;
+  width: 17%;
+}
+
+.card-content{
+  min-height: 90%;
+  margin: 0;
+  border-radius: var(--spacing-1);
+  background: var(--color-desatured-purple);
+  transition: transform 1s;
+}
+
+.card-content:hover{
+  box-shadow: 1px 1px 4px var(--color-gray-shadow);
+  transform: translateY(2px) scale(1.1);
+}
+
+.card-header{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-header > img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+.card-title{
+  font-size: 18px;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center !important;
+  text-align: center;
+  align-items: stretch;
+}
+
+.card-body > button{
+  width: 70%;
+}
+
+.card-text{
+  font-size: 13px;
+  font-weight: 100;
+  opacity: 0.8;
+}
+
+.card-text > small{
+  color: var(--color-light-pink);
+}
+
+.btn-details{
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+
+.album-image{
+  border-radius: var(--spacing-1) !important;
+}
+
+.secondary-section{
+  height: 32vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  background: linear-gradient(31deg, #8915d2 0%, #7ab7af 74%);
+  color: var(--color-white);
+}
+
+.secondary-section > img{
+  height: 43%;
+  position: absolute;
+  left: 0;
+  bottom: -5px;  
+}
+
+.search-section{
+  width: 50%;
+}

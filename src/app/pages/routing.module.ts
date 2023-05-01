@@ -7,7 +7,7 @@ import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {path: '', title: 'Home | Top Trending', component: HomeComponent},
-  {path: 'details/:id', title: 'Details | Results', component: DetailsComponent}
+  {path: 'details/:id', title: 'Artists | Albums', component: DetailsComponent}
 ]
 
 @NgModule({

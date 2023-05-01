@@ -1,1 +1,45 @@
-<p>details works!</p>
+<app-header></app-header>
+
+<div class="main-content">
+  <h3>The best <strong>{{detailsType}}</strong> can be found here</h3>
+  <section class="primary-section" *ngIf="isArtistDetails">
+    <section class="card-section" *ngFor="let item of artists">
+      <div class="card card-content mb-3">
+        <div class="card-header">
+          <img [src]="getImage(item)">
+        </div>
+        <div class="card-body">
+          <div>
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text"><small>{{item.playcount | number}}</small> playcounts</p>
+          </div>
+          <button class="btn btn-outline-secondary btn-sm btn-details" (click)="redirectToUrl(item.url)">Read more</button>
+        </div>
+      </div>
+    </section>
+  </section>
+    <section class="primary-section album-section" *ngIf="!isArtistDetails">
+      <section class="card-section" *ngFor="let item of albums">
+        <div class="card card-content mb-3">
+          <div class="card-header">
+            <img class="album-image" [src]="getImage(item)">
+          </div>
+          <div class="card-body">
+            <div>
+              <h5 class="card-title">{{item[0].name}}</h5>
+              <p class="card-text"><small>{{item[0].playcount | number}}</small> playcounts</p>              
+            </div>
+            <button class="btn btn-outline-secondary btn-sm btn-details" (click)="redirectToUrl(item[0].url)">Read more</button>
+          </div>
+        </div>
+      </section>
+    </section>
+</div>
+
+<section class="secondary-section">
+  <img src="../../../assets/images/secondary-bg.png.png" alt="">
+  <div class="search-section">
+    <app-search></app-search>
+  </div>
+  
+</section>

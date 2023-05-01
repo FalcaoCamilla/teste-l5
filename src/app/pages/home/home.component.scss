@@ -36,6 +36,7 @@
 
 .main-content h2{
   font-size: 50px;
+  font-weight: 700;
 }
 
 .main-content p{
@@ -53,10 +54,10 @@
 }
 
 .trending-button{
-    display: flex;
-    padding: 11px 22px 3px 22px;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  padding: 11px 22px 3px 22px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .top-trending{
@@ -65,7 +66,7 @@
   height: 28vh;
   width: auto;
   padding: 0 var(--spacing-1) !important;
-  background: #0b0012
+  background: var(--secondary-bg-color)
 }
 
 .top-trending > *{
@@ -73,7 +74,7 @@
 }
 
 .top-trending > h2{
-  padding: var(--spacing-2) 0 0 var(--spacing-2); 
+  padding: var(--spacing-2) 0 0 var(--spacing-2);
 }
 
 .artist-trending{
@@ -98,11 +99,11 @@
   min-height: 90%;
   margin: 0;
   border-radius: var(--spacing-1);
-  background: #6341916e;
+  background: var(--color-desatured-purple);
 }
 
 .card-artist:hover{
-  box-shadow: 1px 1px 4px #5e5e5e;
+  box-shadow: 1px 1px 4px var(--color-gray-shadow);
 }
 
 .card-header{
