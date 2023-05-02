@@ -35,7 +35,7 @@
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Primeng][Primeng.com]][Primeng-url]
-* [![SweetAlert][Sweetalert.com]][Sweeatalert-url]
+* [![SweetAlert][Sweetalert.com]][Sweetalert-url]
 
 ### Rodando o Projeto
 
