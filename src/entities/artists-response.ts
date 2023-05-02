@@ -4,4 +4,9 @@ export interface ArtistResponse {
   artists: {
     artist: Artist[];
   };
+  results: {
+    artistmatches: {
+      artist: Artist[]
+    }
+  }
 }

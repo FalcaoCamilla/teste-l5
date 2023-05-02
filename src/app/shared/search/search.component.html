@@ -1,4 +1,20 @@
-<form class="d-flex" role="search">
-  <input class="form-control me-2 search-input" type="search" placeholder="Search for artists or albums" aria-label="Search">
-  <button class="btn btn-outline-light" type="submit">Search</button>
-</form>
+<div class="div-main">
+  <div class="input-group">
+    <input [(ngModel)]="filter.key" type="text" class="form-control" placeholder="Search for {{titleSearch}}">
+    <button (click)="showDialog()" class="btn btn-outline-light" type="button">History</button>
+    <button (click)="getInfo()" class="btn btn-outline-light" type="button">Search</button>
+  </div>
+</div>
+
+<p-dialog header="Your recent searches" [(visible)]="isHistoryVisible" [modal]="true" [style]="{width: '50vw'}">
+    <div class="history">
+      <div class="message-empty" *ngIf="recentSearches.length === 0">
+        {{withoutSearch}}
+      </div>
+      <ul class="searches" *ngFor="let item of recentSearches">
+        <li (click)="bindSearch(item.key)">{{item.key}}</li> 
+        <p-button (click)="clear(item.key)" icon="pi pi-trash" iconPos="right" [styleClass]="'btn-delete'"></p-button>
+      </ul>
+    </div>
+    
+</p-dialog>

@@ -1,5 +1,33 @@
-.search-input{
-  font-size: 15px;
-  font-weight: 100;
-  padding: 15px 10px;  
+.history{
+  background: var(--color-light-violet);
+  border-radius: 8px;
+  padding: var(--spacing-1);
 }
+
+.message-empty{
+  color: var(--color-white);
+  font-style: italic;
+}
+
+.searches{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-1);
+}
+
+.searches:hover{
+  background: var(--color-desatured-purple);
+  border-radius: 8px;
+}
+
+.searches > li{
+  color: var(--color-gray);
+  font-weight: 100;
+}
+
+.searches:hover > li{
+  color: var(--color-white);
+}
+

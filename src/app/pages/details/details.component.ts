@@ -96,8 +96,7 @@ export class DetailsComponent implements OnInit {
     const requests = artistsNames.map(name => this.lastfmApiService.getTopAlbumsByArtist(name));
     forkJoin(requests).subscribe({
       next: (dados) => {
-        this.albums = dados
-        console.log(this.albums);
+        this.albums = dados;
       },
         error: (error) => {
           this.sweetAlert.spinnerHide();

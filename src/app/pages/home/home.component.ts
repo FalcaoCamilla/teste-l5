@@ -36,25 +36,6 @@ export class HomeComponent implements OnInit {
     this.getTracks()
   }
 
-  // getTopTrending(){
-  //   let artists = this.lastfmApiService.getTopArtists();
-  //   let tracks = this.lastfmApiService.getTopTracks();
-
-  //   forkJoin<any[]>([artists, tracks]).subscribe({
-  //     next: (dados) => {
-  //       this.artists = dados[0].artists.artist;
-  //       // this.tracks = dados[1].tracks.track;
-  //     },
-  //     error: (error) => {
-  //       this.sweetAlert.spinnerHide();
-  //       this.sweetAlert.setError(error);
-  //     },
-  //     complete: () => {
-  //       this.sweetAlert.completed('Top Trending carregada');
-  //     }
-  //     })
-  // }
-
   getTracks(){
     this.lastfmApiService.getTopTracks().subscribe({
       next: (dados) => {

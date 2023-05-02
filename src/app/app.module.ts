@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+
 /*
 O Pages Module carrega as páginas principais da aplicação automaticamente,
 bem como importa os componentes compartilhados, através do módulo shared
@@ -20,11 +22,12 @@ bem como importa os componentes compartilhados, através do módulo shared
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule,
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
-    PagesModule
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
