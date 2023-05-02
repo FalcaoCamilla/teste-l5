@@ -6,16 +6,16 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 //Components
 import { HeaderComponent } from './header/header.component';
-import { ListComponent } from './list/list.component';
+import { ListResultsComponent } from './list-results/list-results.component';
 import { SearchComponent } from './search/search.component';
 
-import { DialogModule, Dialog } from 'primeng/dialog'
+import { DialogModule } from 'primeng/dialog'
 import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     HeaderComponent,
-    ListComponent,
-    SearchComponent
+    SearchComponent,
+    ListResultsComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +27,7 @@ import { ButtonModule } from 'primeng/button';
   ],
   exports: [
     HeaderComponent,
-    ListComponent,
+    ListResultsComponent,
     SearchComponent
   ]
 })

@@ -1,0 +1,18 @@
+<div class="main-content">
+  <!-- <h3>Results to '{{searchKey}}'</h3> -->
+  <section class="primary-section">
+    <section class="card-section" *ngFor="let item of result">
+      <div class="card card-content mb-3">
+        <div class="card-header">
+          <img [src]="getImage(item)">
+        </div>
+        <div class="card-body">
+          <div>
+            <h5 class="card-title">{{item.name}}</h5>
+          </div>
+          <button class="btn btn-outline-secondary btn-sm btn-details" (click)="redirectToUrl(item.url)">Read more</button>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>

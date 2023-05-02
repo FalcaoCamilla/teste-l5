@@ -1,0 +1,55 @@
+.main-content{
+  display: flex;
+  justify-content: center;
+}
+
+.primary-section{
+  width: 90%;
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  background: #311c49;
+  padding: 20px 10px;
+  border-radius: 6px;
+  box-shadow: 1px 1px 4px var(--color-gray-shadow);
+}
+
+.card-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 230px;
+  width: 25%;
+  padding: 0 5px;
+}
+
+.card-content{
+  height: 95%;
+  width: 100%;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;  
+}
+
+h5{
+  font-size: 15px;
+}
+
+@media (max-width: 490px){
+  .main-content{
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .primary-section{
+    width: 90% !important;
+  }
+
+  .card-section{
+    width: 50% !important;
+  }
+}

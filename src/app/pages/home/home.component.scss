@@ -124,3 +124,62 @@
   font-size: 14px;
   font-weight: 100;
 }
+
+@media (max-width: 870px) {
+
+  .main {
+    height: 580px;
+  }
+
+  .div-image > img {
+    height: 75% !important;
+  }
+
+  .main-content {
+    position: absolute;
+    padding-top: 31px;
+    text-align: center;
+  }
+
+  .main-buttons {
+    width: 85%;
+  }
+
+  .main-buttons > button {
+    width: 45%;
+  }
+
+  .trending-button{
+    justify-content: center;
+  }
+
+  .trending-button > button {
+    display: none;
+  }
+
+  .top-trending {
+    height: 100%;
+    align-items: center;
+  }
+
+  .artist-trending {
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+  }
+
+  .card-artist{
+    padding: 10px;
+  }
+
+  .artist-div{
+    width: 75%;
+    margin-bottom: 23px;
+  }
+}
+
+@media (max-width: 490px){
+  .artist-trending{
+    width: 100%;
+  }
+}

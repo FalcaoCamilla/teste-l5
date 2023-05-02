@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 //Services
 import { SearchService } from 'src/app/services/search.service';
@@ -18,12 +18,10 @@ import { SweetAlert } from 'src/util/sweetalert';
 })
 export class SearchComponent implements OnInit {
 
-  @HostListener('focus', ['$event.target'])
-
   isArtist = false;
   isHistoryVisible: boolean = false;
   titleSearch: string = '';
-  withoutSearch: string = 'false';
+  withoutSearch: string = 'There is no recent research';
 
   filter: Filter;
 
@@ -35,6 +33,7 @@ export class SearchComponent implements OnInit {
 
   @Input() set isArtistDetails (isArtistDetails: boolean){
     this.isArtist = isArtistDetails
+    this.results = []
     if(this.isArtist){
       this.titleSearch = 'artists'
     } else {
@@ -55,7 +54,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRecentSearches();
-    console.log(this.recentSearches)
   }
 
   addSearchKey(){
@@ -73,28 +71,25 @@ export class SearchComponent implements OnInit {
   getRecentSearches(){
     if(localStorage.getItem("searches")){
       this.recentSearches = JSON.parse(localStorage.getItem("searches") || "[]");
-    } else {
-      this.withoutSearch = 'There is no recent research'
     }
   }
 
-  async getInfo() {
+  getInfo() {
     this.addSearchKey();
     if (this.isArtist) {
-      await this.getArtist();
-      this.results = this.artist;
+      this.getArtist();
     } else {
-      await this.getAlbums();
-      this.results = this.albums;
+      this.getAlbums();
     }
     this.filter.key = '';
     this.getRecentSearches();
   }
   
-  async getArtist() {
+  getArtist() {
     this.apiSearch.getArtist(this.filter.key).subscribe({
       next: (dados) => {
         this.artist = dados;
+        this.results = this.artist;
       },
       error: (error) => {
         this.sweetAlert.spinnerHide();
@@ -106,10 +101,11 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  async getAlbums(){
+  getAlbums(){
     this.apiSearch.getAlbum(this.filter.key).subscribe({
       next: (dados) => {
         this.albums = dados;
+        this.results = this.albums;
       },
       error: (error) => {
         this.sweetAlert.spinnerHide();

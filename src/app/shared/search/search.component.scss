@@ -1,3 +1,7 @@
+.div-main{
+  width: 50%
+}
+
 .history{
   background: var(--color-light-violet);
   border-radius: 8px;
@@ -31,3 +35,12 @@
   color: var(--color-white);
 }
 
+.results{
+  width: 100%;
+}
+
+@media (max-width: 375px){
+  .div-main{
+    width: 90% !important;
+  }    
+}

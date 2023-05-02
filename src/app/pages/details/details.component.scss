@@ -32,7 +32,7 @@ strong{
 }
 
 .card-content{
-  min-height: 90%;
+  height: 90%;
   margin: 0;
   border-radius: var(--spacing-1);
   background: var(--color-desatured-purple);
@@ -66,6 +66,7 @@ strong{
   align-items: center !important;
   text-align: center;
   align-items: stretch;
+  padding: var(--spacing-1)
 }
 
 .card-body > button{
@@ -108,5 +109,54 @@ strong{
 }
 
 .search-section{
-  width: 50%;
+  width: 100%;
+}
+
+.app-search{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 950px){
+  .card-title{
+    font-size: 13px !important;
+  }
+  .card-text{
+    font-size: 11px !important;
+  }
+  .btn-details{
+    font-size: 11px !important;
+  }
+}
+
+@media (max-width: 590px) {
+
+  .main-content{
+    height: 70% !important;
+  }
+
+  .primary-section {
+    padding-top: 90px !important;
+    flex-direction: column !important;
+    overflow: auto;
+  }
+
+  .card-section {
+    min-width: 50% !important;
+  }
+
+  .secondary-section > img {
+    display: none !important;
+  }
+
+  .search-section {
+    width: 100% !important;
+  }
+
+  .app-search {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
 }

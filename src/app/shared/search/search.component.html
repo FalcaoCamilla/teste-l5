@@ -16,5 +16,8 @@
         <p-button (click)="clear(item.key)" icon="pi pi-trash" iconPos="right" [styleClass]="'btn-delete'"></p-button>
       </ul>
     </div>
-    
 </p-dialog>
+
+<div class="results">
+  <app-list-results *ngIf="results.length !== 0" [key]="filter.key" [resultsList]="results"></app-list-results>
+</div>
